@@ -45,10 +45,22 @@ Or if you're only going to test Traffic Server you can use the Apache repository
 
 Vagrant mounts that very directory as _/vagrant_ within the virtual machine:
 
-    vagrant@ts-dev-box:~$ ls /vagrant
-    puppet  rails  README.md  Vagrantfile
+    $ ls
+    puppet  README.md  trafficserver  Vagrantfile
 
-so we are ready to go to edit in the host, and test in the virtual machine.
+Now you can build and install Traffic Server in the virtual machine:
+
+    $ cd trafficserver
+    $ autoconf -fi
+    $ ./configure
+    $ make
+    $ sudo make install
+
+so we are ready to go to edit the source code in the host, rebuild, update and test in the virtual machine:
+
+    $ make
+    $ sudo make install
+    $ sudo /etc/init.d/trafficserver restart
 
 This workflow is convenient because in the host computer one normally has his editor of choice fine-tuned, Git configured, and SSH keys in place.
 
