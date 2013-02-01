@@ -5,7 +5,12 @@ Exec {
   path => ['/usr/sbin', '/usr/bin', '/sbin', '/bin']
 }
 
-# Tools
+# Essentials
+package { ['git-core', 'vim']:
+  ensure => installed
+}
+
+# Build tools
 package { ['g++', 'make', 'autoconf', 'automake', 'pkg-config', 'libtool']:
   ensure => installed
 }
@@ -22,9 +27,5 @@ package { ['libcap-dev', 'libcap2']:
 
 # WCCP requirements
 package { ['bison', 'flex']:
-  ensure => installed
-}
-
-package { 'git-core':
   ensure => installed
 }
