@@ -3,6 +3,7 @@ Vagrant::Config.run do |config|
   config.vm.box_url   = 'http://files.vagrantup.com/precise64.box'
   config.vm.host_name = 'ts-dev-box'
 
+  config.vm.network :hostonly, "192.168.33.10"
   config.vm.forward_port 8080, 8080
 
   config.vm.provision :puppet,

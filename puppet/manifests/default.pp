@@ -6,7 +6,7 @@ Exec {
 }
 
 # Essentials
-package { ['git-core', 'vim']:
+package { ['git-core', 'vim', 'curl']:
   ensure => installed
 }
 
